@@ -1,7 +1,11 @@
 # importing the requests library 
-import requests 
+import requests
+import json
+
+with open('config.json') as f:
+    data = json.load(f)
   
-api = 'newly_made_api_key'
+api = data['token']
 
 # api-endpoint 
 URL = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Summoner_Name?api_key=" + api
